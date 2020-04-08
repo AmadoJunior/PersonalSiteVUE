@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div class="page" id="container">
     <div id="home">
       <h1>Home</h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere assumenda quasi rem harum accusamus? In error, laudantium illum placeat sint autem quae ipsam, numquam itaque quam nesciunt at reprehenderit voluptatem sunt harum similique facere. Reiciendis totam quas ab rem eaque eos vitae quasi eum. Earum sunt nesciunt molestiae quis dicta.</p>
@@ -32,6 +32,7 @@
     justify-content: space-evenly;
     align-items:center;
   }
+
   #home{
     margin:20px 75px 20px 75px;
     flex:1;

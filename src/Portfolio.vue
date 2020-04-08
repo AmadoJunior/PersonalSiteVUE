@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div class="page" id="container">
     <div id="portfolio">
       <h1>Portfolio</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa asperiores enim porro sunt quaerat doloribus rerum maiores? Ducimus, quidem animi?</p>
