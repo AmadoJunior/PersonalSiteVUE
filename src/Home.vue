@@ -1,8 +1,13 @@
 <template>
   <div class="page" id="container">
     <div id="home">
-      <h1>Home</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere assumenda quasi rem harum accusamus? In error, laudantium illum placeat sint autem quae ipsam, numquam itaque quam nesciunt at reprehenderit voluptatem sunt harum similique facere. Reiciendis totam quas ab rem eaque eos vitae quasi eum. Earum sunt nesciunt molestiae quis dicta.</p>
+      <h1>Hello, I'm Amado Dominguez, web designer and full-stack developer based in Miami Florida.</h1>
+      <div class="button">
+        <router-link to="/portfolio" id="works" >
+        <p>Check out my work!</p>
+        <img src="./assets/arrow.png">
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -34,10 +39,24 @@
   }
 
   #home{
-    margin:20px 75px 20px 75px;
-    flex:1;
+    display:flex;
+    flex-direction: column;
     min-width: 400px;
     max-width: 1000px;
     text-align: center;
   }
+
+  #works{
+    display:inline-block;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    color:#343a40;
+  }
+
+  .button {
+    display:inline-block;
+  }
+
 </style>

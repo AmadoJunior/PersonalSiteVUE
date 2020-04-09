@@ -2,7 +2,6 @@
   <div class="page" id="container">
     <div id="contactme">
       <h1>Contact Me</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, dignissimos.</p>
     </div>
   </div>
 </template>

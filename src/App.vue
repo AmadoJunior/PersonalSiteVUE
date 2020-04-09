@@ -34,7 +34,7 @@ export default {
 }
 
 #bg{
-  background-image: url("./assets/red.jpg");
+  background-image: url();
   background-repeat: no-repeat;
   background-size: cover;
   width:100%;
