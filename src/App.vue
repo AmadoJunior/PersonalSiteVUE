@@ -34,9 +34,9 @@ export default {
 }
 
 #bg{
-  background-image: url();
+  /*background-image: url();
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
   width:100%;
 }
 

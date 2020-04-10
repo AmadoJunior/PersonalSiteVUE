@@ -23,7 +23,7 @@
 }
 </script>
 
-<style>
+<style scoped>
   #container{
     flex: 1;
     display:flex;

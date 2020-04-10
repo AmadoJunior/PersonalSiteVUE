@@ -5,6 +5,9 @@ import Home from "./Home.vue"
 import Portfolio from "./Portfolio.vue"
 import AboutMe from "./AboutMe.vue"
 import ContactMe from "./ContactMe.vue"
+import projectCmp from "./components/projectCmp.vue"
+
+Vue.component("projectCmp", projectCmp)
 
 Vue.use(VueRouter);
 const routes = [

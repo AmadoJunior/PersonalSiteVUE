@@ -35,19 +35,22 @@
 }
 </script>
 
-<style>
+<style scoped>
   #container{
-    flex: 1;
     display:flex;
+    text-align: center;
+    flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
     align-items:center;
+    height:100%;
   }
   #aboutme{
-    flex:1;
+    align-self:center;
     min-width: 400px;
     max-width: 1000px;
-    text-align: center;
+    height:500px;
+    
   }
   #resume{
     display:inline-block;
