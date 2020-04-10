@@ -37,29 +37,35 @@
 
 <style scoped>
 h1{
-  margin: 50px;
+  margin: 30px;
 }
-  #container{
-    display:flex;
-    text-align: center;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items:center;
-  }
   #aboutme{
     align-self:center;
     min-width: 400px;
     max-width: 1000px;
-    height:500px;
     
   }
   #resume{
+    margin-bottom: 30px;
     display:inline-block;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
     outline: none;
     color:#343a40;
+    transition: .3s;
+    backface-visibility: hidden;
+  }
+  #resume p {
+    margin:10px 0 0 0;
+  }
+  #resume:hover{
+    transform: scale(1.03);
+  }
+  #resume img{
+    transition: .3s;
+  }
+  #resume:hover img{
+    transform: translateY(5px);
   }
 </style>

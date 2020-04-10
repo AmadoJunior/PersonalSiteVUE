@@ -135,8 +135,8 @@ h1{
   margin:0;
   cursor:pointer;
   padding:5px;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   transition: .2s ease;
 }
 .socialItem:hover{

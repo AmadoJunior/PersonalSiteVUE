@@ -52,7 +52,7 @@ export default {
   margin-top: 10vh;
 }
 #bg{
-  background-image: url(./assets/trash.jpg);
+  background-image: url(./assets/abs2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width:100%;

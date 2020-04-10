@@ -41,26 +41,20 @@
 
 <style scoped>
   h1{
-  margin: 50px;
+  margin: 30px;
 }
   #form input{
     box-sizing: border-box;
+    margin: 5px;
   }
   #details input{
-    margin: 0;
-    width: 220px;
+    margin: 5px;
   }
   #form textarea{
-    width:100%;
+    width:99%;
+    height: 300px;
     resize:none;
     box-sizing: border-box;
-  }
-  #container{
-    flex: 1;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items:center;
   }
   #contactme{
     display:flex;
@@ -75,28 +69,36 @@
     display:flex;
     flex-direction: column;
     align-items:center;
-    padding: 20px;
+    margin: 0 30px 0px 30px;
   }
   .input{
     appearance: none;
-    border: solid black 1px;
-    padding: 2px;
-    margin: 4px;
-    width:100%;
+    background-color: lightgray;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+    width:99%;
   }
   #submit{
-    border: solid black 1px;
+    background-color:#dc3545;
+    color: white;
+    border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
     width: 100px;
-    border-radius: 2px;
-    margin:5px;
+    border-radius: 3px;
+    margin:30px 0 35px 0;
+    transition: .3s;
+  }
+  #submit:hover{
+    background-color:#bb2a39;
   }
   #details{
     padding:2px;
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width:100%;
   }
 </style>

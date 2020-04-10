@@ -64,7 +64,6 @@ export default {
     padding: 10px;
   }
   #links{
-    margin-top: 30px;
     display:flex;
     flex-direction: column;
     justify-content: center;

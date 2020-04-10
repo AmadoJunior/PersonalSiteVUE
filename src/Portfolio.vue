@@ -5,7 +5,7 @@
     </div>
     <div id="projects">
       <projectCmp v-for="project in projects" :key="project.name"
-      :name="project.name" :description="projects.description"/>
+      :name="project.name" :description="project.description"/>
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@
 
 <style scoped>
 h1{
-  margin: 50px;
+  margin: 30px;
 }
 
   #portfolio{
@@ -70,5 +70,6 @@ h1{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 30px;
   }
 </style>
