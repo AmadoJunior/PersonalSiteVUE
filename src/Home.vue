@@ -7,7 +7,7 @@
       <div class="button">
         <router-link to="/portfolio" id="works" >
         <p>Check out my work!</p>
-        <img src="./assets/arrow.png">
+        <img src="./assets/arrow.png" width="20px">
         </router-link>
       </div>
     </div>

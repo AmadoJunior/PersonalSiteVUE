@@ -12,7 +12,7 @@
       <h4>Check out my resume to see my other qualifications.</h4>
       <router-link to="/" id="resume" >
         <p>Download Resume</p>
-        <img src="./assets/arrow.png">
+        <img src="./assets/arrow.png" width="20px">
       </router-link>
     </div>
   </div>
@@ -43,7 +43,9 @@ h1{
     align-self:center;
     min-width: 400px;
     max-width: 1000px;
-    
+  }
+  #aboutme p{
+    margin: 0 30px 20px 30px;
   }
   #resume{
     margin-bottom: 30px;

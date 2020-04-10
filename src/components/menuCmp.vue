@@ -137,7 +137,7 @@ h1{
   padding:5px;
   width: 24px;
   height: 24px;
-  transition: .2s ease;
+  transition: .3s;
 }
 .socialItem:hover{
   transform: scale(1.2);

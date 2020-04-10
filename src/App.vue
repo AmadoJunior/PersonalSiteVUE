@@ -50,6 +50,7 @@ export default {
   min-width: 600px;
   width:60%;
   margin-top: 10vh;
+  border-radius: 3px;
 }
 #bg{
   background-image: url(./assets/abs2.jpg);
