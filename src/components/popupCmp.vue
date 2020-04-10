@@ -1,7 +1,5 @@
 <template>
-  <div class="page" id="container">
     <div id="contactme">
-      <div id="popup">
         <h1>Contact Me</h1>
         <div id="form">
           <input v-model="email" placeholder="Email" class="input">
@@ -12,14 +10,12 @@
           <textarea v-model="message" placeholder="Message" class="input"></textarea>
           <button id="submit" @click="submit()">Submit</button>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
-  export default {
-  name: 'ContactMe',
+export default {
+    name: 'ContactMe',
   data() {
     return {
       email: null,
@@ -29,7 +25,6 @@
     }
   },
   props: {
-    
   },
   methods: {
     submit(){
@@ -40,7 +35,7 @@
 </script>
 
 <style scoped>
-  h1{
+h1{
     margin:0;
   }
   #form input{
@@ -55,22 +50,20 @@
     resize:none;
     box-sizing: border-box;
   }
-  #container{
-    flex: 1;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items:center;
-    height: 100%;
-  }
   #contactme{
+    background-color: white;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 250px;
+    transform: translate(-50%,-50%);
     display:flex;
     flex-direction: column;
     justify-content: center;
     flex:1;
-    min-width: 400px;
-    max-width: 1000px;
     text-align: center;
+    border-radius: 2px;
   }
   #form{
     display:flex;

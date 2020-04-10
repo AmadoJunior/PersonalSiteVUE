@@ -7,15 +7,15 @@
           <h1 class="bracket">/&gt;</h1>
         </div>
           <div id="menu">
-            <router-link to="/" class="menu">HOME</router-link>
+            <router-link to="/" class="link"><p class="menu" v-on:click="off()">HOME</p></router-link>
             <hr>
-            <router-link to="/portfolio" class="menu">PORTFOLIO</router-link>
+            <router-link to="/portfolio" class="link"><p class="menu" v-on:click="off()">PORTFOLIO</p></router-link>
             <hr>
-            <router-link to="/aboutme" class="menu">ABOUT ME</router-link>
+            <router-link to="/aboutme" class="link"><p class="menu" v-on:click="off()">ABOUT ME</p></router-link>
             <hr>
-            <router-link to="/" class="menu">RESUME</router-link>
+            <p @click="popup()" class="link"><p class="menu" v-on:click="popup()">CONTACT ME</p>
             <hr>
-            <router-link to="/contactme" class="menu">CONTACT ME</router-link>
+            <router-link to="/contactme" class="link"><p class="menu" v-on:click="off()">RESUME</p></router-link>
             <hr>
         </div>
       </div>
@@ -44,20 +44,32 @@ export default {
   name: 'menuCmp',
   data() {
     return {
-      
+      isActive:false
     }
   },
   props: {
     
   },
   methods: {
-    
+    popup: function(){
+      var vm = this;
+      this.isActive = !this.isActive;
+      this.$emit("clicked",vm.isActive);
+    },
+    off: function(){
+      var vm = this;
+      this.isActive = false;
+      this.$emit("clicked",vm.isActive);
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+p{
+  margin:0;
+}
 #adm{
   transition: .2s;
 }
@@ -96,12 +108,14 @@ h1{
 .menu{
   color:#343a40;
   cursor:pointer;
-  text-decoration: none;
-  outline: none;
   padding:10px;
   font-size:12px;
   opacity:70%;
   transition: .2s ease;
+}
+.link{
+  text-decoration: none;
+  outline: none;
 }
 .menu:hover{
   opacity:100%;

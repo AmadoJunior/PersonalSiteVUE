@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <menuCmp/>
-    <div id="bg">
-      <transition name="view">
+    <menuCmp @clicked="this.isActive=popup($event)" />
+    <div id="bg" >
+      <popupCmp v-show="isActive"/>
+      <transition name="view" appear>
         <router-view></router-view>
       </transition>
     </div>
@@ -11,16 +12,23 @@
 
 <script>
 import menuCmp from './components/menuCmp.vue'
-
+import popupCmp from './components/popupCmp.vue'
 export default {
   name: 'App',
   components: {
     menuCmp,
+    popupCmp
   },
   data() {
     return {
+      isActive:false,
     };
   },
+  methods:{
+    popup(value){
+      this.isActive = value;
+    }
+  }
   
 }
 </script>
@@ -38,6 +46,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;*/
   width:100%;
+  position:relative;
 }
 
 .view-enter-active, .view-leave-active {
@@ -57,4 +66,6 @@ export default {
   opacity: 1;
   transform: translateY(0px);
 }
+
+
 </style>
