@@ -13,9 +13,9 @@
             <hr>
             <router-link to="/aboutme" class="link"><p class="menu" v-on:click="off()">ABOUT ME</p></router-link>
             <hr>
-            <p @click="popup()" class="link"><p class="menu" v-on:click="popup()">CONTACT ME</p>
+            <p class="link"><p class="menu" v-on:click="popup()">RESUME</p>
             <hr>
-            <router-link to="/contactme" class="link"><p class="menu" v-on:click="off()">RESUME</p></router-link>
+            <router-link to="/contactme" class="link"><p class="menu" v-on:click="off()">CONTACT ME</p></router-link>
             <hr>
         </div>
       </div>
@@ -87,13 +87,12 @@ p{
   color:#dc3545;
 }
 #menuCmp {
-  flex:1;
   height: 100vh;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
   min-width: 300px;
-  max-width: 350px;
+  max-width: 300px;
 }
 h1{
   text-align: center;

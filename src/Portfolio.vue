@@ -4,10 +4,8 @@
       <h1>Portfolio</h1>
     </div>
     <div id="projects">
-      <projectCmp :name="projects[0].name" :description="projects[0].description"/>
-      <projectCmp :name="projects[1].name" :description="projects[1].description" />
-      <projectCmp :name="projects[2].name" :description="projects[2].description" />
-      <projectCmp :name="projects[3].name" :description="projects[3].description" />
+      <projectCmp v-for="project in projects" :key="project.name"
+      :name="project.name" :description="projects.description"/>
     </div>
   </div>
 </template>
@@ -59,17 +57,12 @@
 </script>
 
 <style scoped>
-  #container{
-    flex: 1;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items:center;
-  }
+h1{
+  margin: 50px;
+}
+
   #portfolio{
-    margin:20px 75px 20px 75px;
-    min-width: 400px;
-    max-width: 1000px;
+    align-self:center;
     text-align: center;
   }
   #projects{

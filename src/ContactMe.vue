@@ -41,8 +41,8 @@
 
 <style scoped>
   h1{
-    margin:0;
-  }
+  margin: 50px;
+}
   #form input{
     box-sizing: border-box;
   }
@@ -61,7 +61,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items:center;
-    height: 100%;
   }
   #contactme{
     display:flex;

@@ -2,22 +2,24 @@
   <div id="app">
     <menuCmp @clicked="this.isActive=popup($event)" />
     <div id="bg" >
-      <popupCmp v-show="isActive"/>
-      <transition name="view" appear>
+      <routerTransition>
+
         <router-view></router-view>
-      </transition>
+
+      </routerTransition>
     </div>
   </div>
 </template>
 
 <script>
 import menuCmp from './components/menuCmp.vue'
-import popupCmp from './components/popupCmp.vue'
+import routerTransition from './components/routerTransition.vue'
+
 export default {
   name: 'App',
   components: {
     menuCmp,
-    popupCmp
+    routerTransition
   },
   data() {
     return {
@@ -40,31 +42,23 @@ export default {
   color:#2c3e50;
   display:flex;
 }
-
+.page{
+  background-color:white;
+  text-align: center;
+  position: absolute;
+  max-width:1000px;
+  min-width: 600px;
+  width:60%;
+  margin-top: 10vh;
+}
 #bg{
-  /*background-image: url();
+  background-image: url(./assets/trash.jpg);
   background-repeat: no-repeat;
-  background-size: cover;*/
+  background-size: cover;
   width:100%;
-  position:relative;
-}
-
-.view-enter-active, .view-leave-active {
-  transition: 0.5s;
-}
-
-.view-enter-active{
-  transition-delay: 0.5s;
-}
-
-.view-enter, .view-leave-to {
-  opacity: 0;
-  transform: translateY(200px);
-}
-
-.view-enter-to, .view-leave {
-  opacity: 1;
-  transform: translateY(0px);
+  display:flex;
+  justify-content: space-evenly;
+  min-width:500px;
 }
 
 

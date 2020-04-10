@@ -36,6 +36,9 @@
 </script>
 
 <style scoped>
+h1{
+  margin: 50px;
+}
   #container{
     display:flex;
     text-align: center;
@@ -43,7 +46,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items:center;
-    height:100%;
   }
   #aboutme{
     align-self:center;

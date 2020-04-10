@@ -1,5 +1,7 @@
 <template>
-    <div id="contactme">
+<div>
+  <fadeTransition>
+    <div id="contactme" v-show="active">
         <h1>Contact Me</h1>
         <div id="form">
           <input v-model="email" placeholder="Email" class="input">
@@ -11,11 +13,21 @@
           <button id="submit" @click="submit()">Submit</button>
         </div>
     </div>
+  </fadeTransition>
+</div>
 </template>
 
 <script>
+import fadeTransition from './transition.vue'
+
 export default {
-    name: 'ContactMe',
+  name: 'ContactMe',
+  component:{
+    fadeTransition,
+  },
+  props: {
+    isActive: Boolean,
+  },
   data() {
     return {
       email: null,
@@ -24,11 +36,14 @@ export default {
       message: null
     }
   },
-  props: {
-  },
   methods: {
     submit(){
       console.log(this.email, this.name, this.subject, this.message)
+    }
+  },
+  computed:{
+    active: function(){
+      return this.isActive;
     }
   }
 }

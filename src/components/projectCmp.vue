@@ -42,6 +42,7 @@ export default {
     display:flex;
     flex-direction: row;
     width: 275px;
+    padding: 15px;
   }
   #container{
     padding: 10px;
@@ -58,11 +59,12 @@ export default {
 
   }
   .links{
-    width:40px;
-    height:40px;
+    width:35px;
+    height:35px;
     padding: 10px;
   }
   #links{
+    margin-top: 30px;
     display:flex;
     flex-direction: column;
     justify-content: center;
