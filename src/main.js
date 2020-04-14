@@ -6,6 +6,7 @@ import Portfolio from "./Portfolio.vue"
 import AboutMe from "./AboutMe.vue"
 import ContactMe from "./ContactMe.vue"
 import projectCmp from "./components/projectCmp.vue"
+import Login from "./Login.vue"
 
 Vue.component("projectCmp", projectCmp)
 
@@ -15,6 +16,7 @@ const routes = [
   {path: "/portfolio", component: Portfolio},
   {path: "/aboutme", component: AboutMe},
   {path: "/contactme", component: ContactMe},
+  {path: "/login", component: Login}
 ];
 
 const router = new VueRouter({
