@@ -17,6 +17,8 @@
             <hr>
             <router-link to="/contactme" class="link"><p class="menu" v-on:click="off()">CONTACT ME</p></router-link>
             <hr>
+            <router-link to="/login" class="link"><p class="menu" v-on:click="off()">PROJECT MANAGER</p></router-link>
+            <hr>
         </div>
       </div>
       <div id="footer">
@@ -105,11 +107,11 @@ h1{
   justify-content: space-evenly;
 }
 .menu{
-  color:#343a40;
+  color:#2c3e50;
   cursor:pointer;
   padding:10px;
-  font-size:12px;
-  opacity:70%;
+  font-size:13px;
+  opacity:0.8;
   transition: .2s ease;
 }
 .link{
@@ -117,7 +119,7 @@ h1{
   outline: none;
 }
 .menu:hover{
-  opacity:100%;
+  opacity:1;
   transform: scale(1.05);
 }
 #social{

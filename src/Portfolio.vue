@@ -12,6 +12,8 @@
 
 <script>
   import projectCmp from "./components/projectCmp.vue"
+  import Project from "./tools/projectMgrService";
+
   export default {
   name: 'Portfolio',
   component:{
@@ -19,39 +21,17 @@
   },
   data() {
     return {
-      projects: [
-        {
-        name:"Weather App",
-        description:"Weather app that fetches the weather given a string.",
-        githubLink: "qwer",
-        liveLink: "qwer"
-        },
-        {
-        name:"PDF Scanner",
-        description:"Mobile web app that scans text given an image.",
-        githubLink: "qwer",
-        liveLink: "qwer"
-        },
-        {
-        name:"Post Board",
-        description:"Sample social network app. Allows users to create/delete posts.",
-        githubLink: "qwer",
-        liveLink: "qwer"
-        },
-        {
-        name:"Matrix Solver",
-        description:"Systems of equations solver built on Java Swing using TesseractOCR.",
-        githubLink: "qwer",
-        liveLink: "qwer"
-        },
-      ]
+      projects: []
     }
   },
-  props: {
-    
-  },
-  methods: {
-    
+  async created(){
+    try{
+      const data = await Project.getPorject();
+      console.log(data);
+      this.projects = await Project.getProject();
+    }catch(err){
+      console.log(err);
+    }
   }
 }
 </script>

@@ -53,9 +53,10 @@ export default {
   border-radius: 3px;
 }
 #bg{
-  background-image: url(./assets/abs2.jpg);
+  background-image: url(./assets/abs.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width:100%;
   display:flex;
   justify-content: space-evenly;

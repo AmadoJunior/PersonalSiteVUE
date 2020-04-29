@@ -13,9 +13,10 @@
 </template>
 
 <script>
-import sample from '@/assets/rect.png'
-import github from '@/assets/github.png'
-import play from '@/assets/play.png'
+import sample from '@/assets/rect.png';
+import github from '@/assets/github.png';
+import play from '@/assets/play.png';
+
 export default {
     name: 'projectCmp',
     props:{

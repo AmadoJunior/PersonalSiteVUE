@@ -1,25 +1,36 @@
 <template>
-    <div class="page">
-        <h1>Admin Login</h1>
-        <div>
-            <input type="text" placeholder="User" class="input" v-model.lazy="userName">
-            <input type="text" placeholder="Password" class="input" v-model.lazy="password">
+        <div class="page" v-if="!logedIn">
+            <div>
+                <h1>Admin Login</h1>
+                <div>
+                    <input type="text" placeholder="User" class="input" v-model.lazy="userName">
+                    <input type="text" placeholder="Password" class="input" v-model.lazy="password">
+                </div>
+                <button id="submit" @click="login()">Enter</button>
+            </div>
         </div>
-        <button id="submit" @click="login()">Enter</button>
-    </div>
+        <projectManager v-else></projectManager>
 </template>
 
 <script>
+import projectManager from "./components/projectManagerCmp.vue";
 export default {
     name:"login",
+    components:{
+        projectManager,
+    },
     data: function() {
         return {
             userName: "",
-            password: ""
+            password: "",
+            logedIn: false
         }
     },
     methods:{
         login(){
+            if(this.userName === "Test" && this.password === "Test"){
+                this.logedIn = true;
+            }
             console.log(this.userName, this.password);
         }
     }
