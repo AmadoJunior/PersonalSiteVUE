@@ -7,17 +7,17 @@
           <h1 class="bracket">/&gt;</h1>
         </div>
           <div id="menu">
-            <router-link to="/" class="link"><p class="menu" v-on:click="off()">HOME</p></router-link>
+            <router-link to="/" class="link"><p class="menu" >HOME</p></router-link>
             <hr>
-            <router-link to="/portfolio" class="link"><p class="menu" v-on:click="off()">PORTFOLIO</p></router-link>
+            <router-link to="/portfolio" class="link"><p class="menu" >PORTFOLIO</p></router-link>
             <hr>
-            <router-link to="/aboutme" class="link"><p class="menu" v-on:click="off()">ABOUT ME</p></router-link>
+            <router-link to="/aboutme" class="link"><p class="menu" >ABOUT ME</p></router-link>
             <hr>
             <p class="link"><p class="menu" v-on:click="popup()">RESUME</p>
             <hr>
-            <router-link to="/contactme" class="link"><p class="menu" v-on:click="off()">CONTACT ME</p></router-link>
+            <router-link to="/contactme" class="link"><p class="menu" >CONTACT ME</p></router-link>
             <hr>
-            <router-link to="/login" class="link"><p class="menu" v-on:click="off()">PROJECT MANAGER</p></router-link>
+            <router-link to="/login" class="link"><p class="menu" >PROJECT MANAGER</p></router-link>
             <hr>
         </div>
       </div>
@@ -46,23 +46,14 @@ export default {
   name: 'menuCmp',
   data() {
     return {
-      isActive:false
+  
     }
   },
   props: {
     
   },
   methods: {
-    popup: function(){
-      var vm = this;
-      this.isActive = !this.isActive;
-      this.$emit("clicked",vm.isActive);
-    },
-    off: function(){
-      var vm = this;
-      this.isActive = false;
-      this.$emit("clicked",vm.isActive);
-    }
+    
   }
 }
 </script>

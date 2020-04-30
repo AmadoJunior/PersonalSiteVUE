@@ -4,8 +4,8 @@
       <h1>Portfolio</h1>
     </div>
     <div id="projects">
-      <projectCmp v-for="project in projects" :key="project.name"
-      :name="project.name" :description="project.description"/>
+      <projectCmp v-for="project in projects" :key="project.title"
+      :name="project.title" :description="project.description"/>
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@
   },
   async created(){
     try{
-      const data = await Project.getPorject();
+      const data = await Project.getProject();
       console.log(data);
       this.projects = await Project.getProject();
     }catch(err){

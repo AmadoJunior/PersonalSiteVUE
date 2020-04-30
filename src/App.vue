@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <menuCmp @clicked="this.isActive=popup($event)" />
+    <menuCmp/>
     <div id="bg" >
       <routerTransition>
 
@@ -23,13 +23,11 @@ export default {
   },
   data() {
     return {
-      isActive:false,
+
     };
   },
   methods:{
-    popup(value){
-      this.isActive = value;
-    }
+    
   }
   
 }
@@ -60,7 +58,7 @@ export default {
   width:100%;
   display:flex;
   justify-content: space-evenly;
-  min-width:500px;
+  min-width:650px;
 }
 
 
