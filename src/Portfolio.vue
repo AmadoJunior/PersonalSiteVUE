@@ -9,7 +9,6 @@
       :githubLink="project.githubLink" :liveLink="project.liveLink"
       />
     </div>
-    <button @click="printLinks()">test</button>
   </div>
 </template>
 
@@ -35,10 +34,7 @@
     }
   },
   methods:{
-    printLinks(){
-      console.log(this.projects[0].githubLink);
-      console.log(this.projects[0].githubLink);
-    }
+
   }
 }
 </script>
