@@ -49,6 +49,7 @@ export default {
   width:60%;
   margin-top: 10vh;
   border-radius: 3px;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
 }
 #bg{
   background-image: url(./assets/abs.jpg);
