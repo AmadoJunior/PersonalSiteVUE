@@ -1,7 +1,7 @@
 <template>
   <div id="projectCmp">
     <div id="container">
-      <h4>{{name}}</h4>
+      <h4>{{title}}</h4>
       <a :href="liveLink"><img :src="imgIcon" id="imgIcon"></a>
       <p>{{description}}</p>
     </div>
@@ -20,7 +20,7 @@ import play from '@/assets/play.png';
 export default {
     name: 'projectCmp',
     props:{
-      name: String,
+      title: String,
       description: String,
       githubLink: String,
       liveLink: String,

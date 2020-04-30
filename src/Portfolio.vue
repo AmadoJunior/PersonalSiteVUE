@@ -5,8 +5,11 @@
     </div>
     <div id="projects">
       <projectCmp v-for="project in projects" :key="project.title"
-      :name="project.title" :description="project.description"/>
+      :title="project.title" :description="project.description"
+      :githubLink="project.githubLink" :liveLink="project.liveLink"
+      />
     </div>
+    <button @click="printLinks()">test</button>
   </div>
 </template>
 
@@ -26,11 +29,15 @@
   },
   async created(){
     try{
-      const data = await Project.getProject();
-      console.log(data);
       this.projects = await Project.getProject();
     }catch(err){
       console.log(err);
+    }
+  },
+  methods:{
+    printLinks(){
+      console.log(this.projects[0].githubLink);
+      console.log(this.projects[0].githubLink);
     }
   }
 }

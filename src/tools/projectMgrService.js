@@ -1,6 +1,14 @@
+//Npm packages
 import axios from "axios";
 
-const url = "api/projects/"
+//URL to my api
+const url = "api/projects/";
+//Axios configuration to be able to send a file through a post request.
+const headerAxiosConfig = {
+    headers: {
+        "Content-Type": "multipart/form-data"
+    }
+}
 
 class Project{
     static async getProject(){
@@ -19,6 +27,9 @@ class Project{
             }
             
         })
+    }
+    static postProject(formData){
+        return axios.post(url, formData, headerAxiosConfig);
     }
 }
 

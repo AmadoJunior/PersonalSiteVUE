@@ -1,5 +1,5 @@
 <template>
-    <div class="page" v-if="!logedIn">
+    <div class="page">
         <div>
             <h1>Admin Login</h1>
             <div>
@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         login(){
-            if(this.userName === "Test" && this.password === "Test"){
+            if(this.userName === "" && this.password === ""){
                 this.$emit("loggedIn");
             }
             console.log(this.userName, this.password);
