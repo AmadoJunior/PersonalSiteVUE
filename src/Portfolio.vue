@@ -4,9 +4,13 @@
       <h1>Portfolio</h1>
     </div>
     <div id="projects">
-      <projectCmp v-for="project in projects" :key="project.title"
-      :title="project.title" :description="project.description"
-      :githubLink="project.githubLink" :liveLink="project.liveLink"
+      <projectCmp v-for="project in projects" 
+      :key="project.title"
+      :title="project.title" 
+      :description="project.description"
+      :githubLink="project.githubLink" 
+      :liveLink="project.liveLink"
+      :file="project.file"
       />
     </div>
   </div>

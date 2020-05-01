@@ -16,7 +16,7 @@
         <div class="field">
         <p>Description:</p>
         <textarea name="description" class="input" placeholder="Description" v-model.lazy="description"></textarea>
-        <input type="file" name="file" ref="file" id="import" @change="handleFileUpload()">
+        <input type="file" name="file" ref="file" id="import" accept="image/*" @change="handleFileUpload()">
         </div>
         
         <button id="submit" @click="addProject()">Add</button>

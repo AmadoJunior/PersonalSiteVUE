@@ -2,7 +2,7 @@
   <div id="projectCmp">
     <div id="container">
       <h4>{{title}}</h4>
-      <a :href="liveLink"><img :src="imgIcon" id="imgIcon"></a>
+      <a :href="liveLink"><img :src="file" id="imgIcon"></a>
       <p>{{description}}</p>
     </div>
     <div id="links">
@@ -13,25 +13,28 @@
 </template>
 
 <script>
-import sample from '@/assets/rect.png';
 import github from '@/assets/github.png';
 import play from '@/assets/play.png';
 
 export default {
-    name: 'projectCmp',
-    props:{
+  name: 'projectCmp',
+  props:{
       title: String,
       description: String,
       githubLink: String,
       liveLink: String,
-    },
-    data() {
+      file: String
+  },
+  data() {
     return {
-      imgIcon: sample,
       githubIcon: github,
       playIcon: play,
     }
   },
+  created(){
+    console.log(this.file);
+  }
+
 }
 </script>
 
@@ -57,7 +60,8 @@ export default {
     margin: 5px;
   }
   #imgIcon{
-
+    height: 125px;
+    width: 200px;
   }
   .links{
     width:35px;
