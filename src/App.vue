@@ -60,6 +60,7 @@ export default {
   display:flex;
   justify-content: space-evenly;
   min-width:650px;
+  min-height: 575px;
 }
 
 
