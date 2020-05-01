@@ -3,6 +3,7 @@ import axios from "axios";
 
 //URL to my api
 const url = "api/projects/";
+
 //Axios configuration to be able to send a file through a post request.
 const headerAxiosConfig = {
     headers: {
@@ -30,6 +31,19 @@ class Project{
     }
     static postProject(formData){
         return axios.post(url, formData, headerAxiosConfig);
+    }
+    static async deleteProject(title){
+        const res = await axios.get(url);
+        try{
+            for(let object of res.data){
+                if(object.title == title){
+                    axios.delete(url + object._id);
+                }
+            }
+        } catch(err){
+            console.log(err);
+        }
+        
     }
 }
 

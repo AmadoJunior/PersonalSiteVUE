@@ -2,23 +2,31 @@
     <div id="form">
         <h2>Remove Project</h2>
         <div class="field">
-        <label for="name">Remove by Name:</label>
-        <input type="text" name="name" class="input" placeholder="Name">
+        <label for="name">Remove by Title:</label>
+        <input 
+        type="text" 
+        name="title" 
+        class="input" 
+        placeholder="Title"
+        v-model="title"
+        >
         </div>
         <button id="submit" @click="remove()">Remove</button>
     </div>
 </template>
 <script>
+import projectMgrService from "./../tools/projectMgrService.js";
+
 export default {
     name:"removeProjectCmp",
     data:function(){
         return {
-
+            title: ""
         }
     },
     methods:{
         remove(){
-
+            projectMgrService.deleteProject(this.title);
         }
     }
 

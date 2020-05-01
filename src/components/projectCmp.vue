@@ -2,12 +2,12 @@
   <div id="projectCmp">
     <div id="container">
       <h4>{{title}}</h4>
-      <a :href="liveLink"><img :src="file" id="imgIcon"></a>
+      <img :src="file" id="imgIcon" @click="goto(liveLink)">
       <p>{{description}}</p>
     </div>
     <div id="links">
-      <a :href="githubLink"><img :src="githubIcon" class="links"></a>
-      <a :href="liveLink"><img :src="playIcon" class="links"></a>
+      <img :src="githubIcon" class="links" @click="goto(githubLink)">
+      <img :src="playIcon" class="links" @click="goto(liveLink)">
     </div>
   </div>
 </template>
@@ -33,13 +33,18 @@ export default {
   },
   created(){
     console.log(this.file);
+  },
+  methods:{
+    goto(url){
+      window.location = url;
+    }
   }
 
 }
 </script>
 
 <style scoped>
-  a{
+  img{
     cursor:pointer;
   }
   #projectCmp{
