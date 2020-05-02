@@ -40,6 +40,13 @@ export default {
   color:#2c3e50;
   display:flex;
 }
+label{
+    padding: 10px;
+}
+.fieldContainer{
+    padding: 5px;
+    margin: 2px;
+}
 .page{
   background-color:white;
   text-align: center;
@@ -60,8 +67,29 @@ export default {
   display:flex;
   justify-content: space-evenly;
   min-width:650px;
-  min-height: 575px;
+  min-height: 1000px;
 }
-
+.redBtn{
+    background-color:#dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 100px;
+    border-radius: 3px;
+    margin:20px 0 25px 0;
+    transition: .3s;
+}
+.redBtn:hover{
+    background-color:#bb2a39;
+}
+.inputField{
+    appearance: none;
+    background-color: lightgray;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px 20px 5px 20px;
+}
 
 </style>

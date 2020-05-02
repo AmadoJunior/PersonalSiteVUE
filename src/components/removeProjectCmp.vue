@@ -1,17 +1,17 @@
 <template>
-    <div id="form">
+    <div id="container">
         <h2>Remove Project</h2>
-        <div class="field">
+        <div class="fieldContainer">
         <label for="name">Remove by Title:</label>
         <input 
         type="text" 
         name="title" 
-        class="input" 
+        class="inputField" 
         placeholder="Title"
         v-model="title"
         >
         </div>
-        <button id="submit" @click="remove()">Remove</button>
+        <button class="redBtn" @click="remove()">Remove</button>
     </div>
 </template>
 <script>
@@ -33,34 +33,7 @@ export default {
 }
 </script>
 <style scoped>
-label{
-    padding: 10px;
-}
-.input{
-    appearance: none;
-    background-color: lightgray;
-    border: none;
-    border-radius: 3px;
-    padding: 10px;
-    margin: 5px;
-    width:70%;
-}
-#submit{
-    background-color:#dc3545;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    width: 100px;
-    border-radius: 3px;
-    margin:20px 0 35px 0;
-    transition: .3s;
-}
-.field{
-    padding: 10px;
-    margin: 5px;
-}
-#form{
+#container{
     margin: 10px;
-  }
+}
 </style>
