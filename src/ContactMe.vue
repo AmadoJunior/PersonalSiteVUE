@@ -4,18 +4,18 @@
         <h1>Contact Me</h1>
         <div class="fieldContainer">
           <label for="email">Email:</label>
-          <input v-model="email" placeholder="Email" id="email" class="inputField">  
+          <input v-model="email" placeholder="Email" id="email" name="email" class="inputField">  
         </div>
         <div class="fieldContainer">
           <label for="name">Name:</label>
-          <input v-model="name" placeholder="Name" id="name" class="inputField">
+          <input v-model="name" placeholder="Name" id="name" name="name" class="inputField">
         </div>
         <div class="fieldContainer">
           <label for="subject" id="subjectLabel" >Subject:</label>
-          <input v-model="subject" placeholder="Subject" id="subject" class="inputField">
+          <input v-model="subject" placeholder="Subject" id="subject" name="subject" class="inputField">
         </div>
         <div class="fieldContainer">
-          <textarea v-model="message" placeholder="Message" class="inputField"></textarea>
+          <textarea v-model="message" placeholder="Message" name="message" class="inputField"></textarea>
         </div>
         <button class="redBtn" @click="submit()">Submit</button>
     </div>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import Email from "./tools/emailsService.js";
+
   export default {
   name: 'ContactMe',
   data() {
@@ -38,7 +40,13 @@
   },
   methods: {
     submit(){
-      console.log(this.email, this.name, this.subject, this.message)
+      let emailData = {
+        name: this.name,
+        email: this.email,
+        subject: this.subject,
+        message: this.message,
+      }
+      Email.sendEmail(emailData);
     }
   }
 }
