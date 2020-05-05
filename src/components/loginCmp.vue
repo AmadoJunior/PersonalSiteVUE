@@ -3,8 +3,8 @@
         <div>
             <h1>Admin Login</h1>
             <div>
-                <input type="text" placeholder="User" class="inputField" v-model.lazy="userName">
-                <input type="text" placeholder="Password" class="inputField" v-model.lazy="password">
+                <input type="text" placeholder="User" class="inputField" v-model="userName">
+                <input type="text" placeholder="Password" class="inputField" v-model="password">
             </div>
             <button class="redBtn" @click="login()">Login</button>
         </div>
@@ -12,20 +12,20 @@
 </template>
 
 <script>
+import {store} from "./../main";
+
 export default {
     name:"loginCmp",
     data: function(){
         return {
-            userName: "",
-            password: "",
+            userName: null,
+            password: null,
         }
     },
     methods: {
         login(){
-            if(this.userName === "" && this.password === ""){
-                this.$emit("loggedIn");
-            }
-            console.log(this.userName, this.password);
+                store.getToken(this.userName, this.password);
+                console.log("got here");
         }
     }
 }

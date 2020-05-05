@@ -1,15 +1,19 @@
 //Npm packages
 import axios from "axios";
+import {store} from "./../main.js"
 
 //URL to my api
 const url = "api/projects/";
 
 //Axios configuration to be able to send a file through a post request.
+/*
 const headerAxiosConfig = {
     headers: {
-        "Content-Type": "multipart/form-data"
+        "Content-Type": "multipart/form-data",
+        "Authorization": `Bearer ${store.state.token}`
     }
 }
+*/
 
 class Project{
     static async getProject(){
@@ -30,7 +34,10 @@ class Project{
         })
     }
     static postProject(formData){
-        return axios.post(url, formData, headerAxiosConfig);
+        return axios.post(url, formData,{
+            "Content-Type": "multipart/form-data",
+            "Authorization": `Bearer ${store.state.token}`
+        });
     }
     static async deleteProject(title){
         const res = await axios.get(url);

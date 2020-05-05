@@ -23,6 +23,7 @@
 </template>
 <script>
 import projectMgrService from "./../tools/projectMgrService.js";
+
 export default {
     name: "addProjectCmp",
     data: function(){

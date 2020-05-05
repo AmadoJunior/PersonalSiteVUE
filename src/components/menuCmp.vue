@@ -13,7 +13,7 @@
             <hr>
             <router-link to="/aboutme" class="link"><p class="menu" >ABOUT ME</p></router-link>
             <hr>
-            <p class="link"><p class="menu" v-on:click="popup()">RESUME</p>
+            <p class="link"><p class="menu">RESUME</p>
             <hr>
             <router-link to="/contactme" class="link"><p class="menu" >CONTACT ME</p></router-link>
             <hr>

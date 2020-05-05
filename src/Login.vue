@@ -1,11 +1,13 @@
 <template>
-        <loginCmp v-if="!loggedIn" @loggedIn="loggedIn=!loggedIn"/>
+        <loginCmp v-if="!state.loggedIn" />
         <projectManager v-else></projectManager>
 </template>
 
 <script>
 import projectManager from "./components/projectManagerCmp.vue";
 import loginCmp from "./components/loginCmp.vue";
+import {store} from "./main";
+
 export default {
     name:"login",
     components:{
@@ -14,12 +16,9 @@ export default {
     },
     data: function() {
         return {
-            loggedIn: false
+            state: store.state
         }
-    },
-    methods:{
-        
-    }
+        }
 }
 </script>
 
