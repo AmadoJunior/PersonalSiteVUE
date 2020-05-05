@@ -34,9 +34,12 @@ class Project{
         })
     }
     static postProject(formData){
-        return axios.post(url, formData,{
-            "Content-Type": "multipart/form-data",
-            "Authorization": `Bearer ${store.state.token}`
+        const token = store.state.token
+        console.log(token)
+        return axios.post(url, formData,{headers:{
+                "Content-Type": "multipart/form-data",
+                "authorization": "Bearer " + token
+            }
         });
     }
     static async deleteProject(title){
