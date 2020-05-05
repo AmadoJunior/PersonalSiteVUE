@@ -17,6 +17,8 @@
         <div class="fieldContainer">
           <textarea v-model="message" placeholder="Message" name="message" class="inputField"></textarea>
         </div>
+        <p v-show="incompleteError">Incomplete Fields</p>
+        <p v-show="emailError">Invalid Email Adress</p>
         <button class="redBtn" @click="submit()">Submit</button>
     </div>
   </div>
@@ -29,10 +31,13 @@ import Email from "./tools/emailsService.js";
   name: 'ContactMe',
   data() {
     return {
-      email: null,
-      name: null,
-      subject: null,
-      message: null
+      email: "",
+      name: "",
+      subject: "",
+      message: "",
+      incompleteError: false,
+      emailError: false,
+      emailRegExp: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     }
   },
   props: {
@@ -40,19 +45,40 @@ import Email from "./tools/emailsService.js";
   },
   methods: {
     submit(){
-      let emailData = {
-        name: this.name,
-        email: this.email,
-        subject: this.subject,
-        message: this.message,
+      if(this.email.length < 1 || 
+      this.name.length < 1 || 
+      this.subject.length < 1 || 
+      this.message.length < 1){
+        this.incompleteError = true;
+      } else {
+        this.incompleteError = false;
+        if(this.email.match(this.emailRegExp)){
+          this.emailError = false;
+          let emailData = {
+            name: this.name,
+            email: this.email,
+            subject: this.subject,
+            message: this.message,
+          }
+          this.name = "";
+          this.email = "";
+          this.subject = "";
+          this.message = "";
+          Email.sendEmail(emailData);
+        } else {
+          this.emailError = true;
+        }
       }
-      Email.sendEmail(emailData);
+      
     }
   }
 }
 </script>
 
 <style scoped>
+p{
+  color:red;
+}
 textarea{
     height: 100px;
     width: 400px;

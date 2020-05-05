@@ -21,20 +21,21 @@ Vue.component("removeProjectCmp", removeProjectCmp);
 import Token from "./tools/tokenService";
 
 //Store State Manager
-export const store = {
+export var store = {
   state: {
     loggedIn: false,
     token: null,
     userData: {
 
-    }
+    },
+    error: false
   },
   async getToken(email, password){
     try{
       const data = await Token.getToken(email, password);
+      this.state.error = false;
       this.state.userData = data.userData;
       this.state.token = data.token;
-      console.log(data);
       this.state.loggedIn = true;
       setTimeout(()=>{
         this.state.loggedIn = false;
@@ -42,6 +43,7 @@ export const store = {
         this.state.userData = null;
       }, 1800000)
     }catch(err){
+      this.state.error = true;
       console.log(err);
     }
     
