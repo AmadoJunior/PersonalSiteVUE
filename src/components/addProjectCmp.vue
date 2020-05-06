@@ -37,10 +37,10 @@ export default {
     },
     methods:{
         addProject(){
-            if(this.liveLink.length < 1){
+            if(this.liveLink.length <= 1){
                 this.liveLink = null;
             }
-            if(this.githubLink.length < 1){
+            if(this.githubLink.length <= 1){
                 this.githubLink = null;
             }
             let formData = new FormData();

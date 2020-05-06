@@ -88,7 +88,6 @@ export default {
     height: 125px;
     width: 200px;
     margin: 5px;
-    transform: scale(.9);
   }
   .links{
     width:35px;
@@ -97,10 +96,12 @@ export default {
   }
   .nullLink{
     opacity: .7;
+    transform: scale(.9);
   }
   .activeLink{
     cursor:pointer;
     transition: .2s;
+    transform: scale(.9);
   }
   .activeLink:hover{
     transform: scale(1);
