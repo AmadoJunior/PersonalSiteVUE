@@ -37,6 +37,12 @@ export default {
     },
     methods:{
         addProject(){
+            if(this.liveLink.length < 1){
+                this.liveLink = null;
+            }
+            if(this.githubLink.length < 1){
+                this.githubLink = null;
+            }
             let formData = new FormData();
             formData.append("title", this.title);
             formData.append("liveLink", encodeURI(this.liveLink));
@@ -45,6 +51,13 @@ export default {
             formData.append("file", this.file);
 
             projectMgrService.postProject(formData);
+
+            this.title = "";
+            this.description = "";
+            this.liveLink = "";
+            this.githubLink = "";
+            this.file = "";
+
         },
         handleFileUpload(){
             this.file = this.$refs.file.files[0];

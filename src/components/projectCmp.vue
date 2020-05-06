@@ -2,12 +2,12 @@
   <div id="projectCmp">
     <div id="container">
       <h4>{{title}}</h4>
-      <img :src="file" id="imgIcon" @click="goto(liveLink)">
+      <img :src="file" id="imgIcon">
       <p>{{description}}</p>
     </div>
-    <div id="links">
-      <img :src="githubIcon" class="links" @click="goto(githubLink)">
-      <img :src="playIcon" class="links" @click="goto(liveLink)">
+    <div id="linksContainer">
+      <img :src="githubIcon" class="links" :class="{nullLink: isNullLink1, activeLink: isActiveLink1}" @click="goto(githubLink)">
+      <img :src="playIcon" class="links" :class="{nullLink: isNullLink2, activeLink: isActiveLink2}" @click="goto(liveLink)">
     </div>
   </div>
 </template>
@@ -18,6 +18,22 @@ import play from '@/assets/play.png';
 
 export default {
   name: 'projectCmp',
+  created(){
+    if(this.githubLink != null){
+      this.isActiveLink1 = true;
+      this.isNullLink1 = false;
+    } else {
+      this.isActiveLink1 = false;
+      this.isNullLink1 = true;
+    }
+    if(this.liveLink != null){
+      this.isActiveLink2 = true;
+      this.isNullLink2 = false;
+    } else {
+      this.isActiveLink2 = false;
+      this.isNullLink2 = true;
+    }
+  },
   props:{
       title: String,
       description: String,
@@ -29,14 +45,17 @@ export default {
     return {
       githubIcon: github,
       playIcon: play,
+      isNullLink1: false,
+      isActiveLink1: true,
+      isNullLink2: false,
+      isActiveLink2: true
     }
-  },
-  created(){
-    console.log(this.file);
   },
   methods:{
     goto(url){
+    if(url != null){
       window.location = url;
+    }
     }
   }
 
@@ -44,36 +63,49 @@ export default {
 </script>
 
 <style scoped>
-  img{
-    cursor:pointer;
-  }
   #projectCmp{
     display:flex;
     flex-direction: row;
     width: 275px;
     padding: 15px;
+    transition: .2s;
+  }
+  #projectCmp:hover{
+    transform: scale(1.02);
   }
   #container{
     padding: 10px;
     text-align: center;
   }
-  #container p{
+  p{
     font-size: 13px;
     margin: 5px;
   }
-  #container h4{
+  h4{
     margin: 5px;
   }
   #imgIcon{
     height: 125px;
     width: 200px;
+    margin: 5px;
   }
   .links{
     width:35px;
     height:35px;
     padding: 10px;
   }
-  #links{
+  .nullLink{
+    opacity: 70%;
+  }
+  .activeLink{
+    cursor:pointer;
+    transform: scale(.9);
+    transition: .2s;
+  }
+  .activeLink:hover{
+    transform: scale(1);
+  }
+  #linksContainer{
     display:flex;
     flex-direction: column;
     justify-content: center;
