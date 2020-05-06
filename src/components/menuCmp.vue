@@ -122,14 +122,14 @@ h1{
 .container{
   margin:0;
   width: 30px;
-  height: 30px;
+  height: 40px;
 }
 .socialItem {
   margin:0;
   cursor:pointer;
   padding:5px;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   transition: .3s;
 }
 .socialItem:hover{

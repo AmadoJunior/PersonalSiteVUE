@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import github from '@/assets/github.png';
-import play from '@/assets/play.png';
+import github from '@/assets/github2.png';
+import play from '@/assets/play2.png';
 
 export default {
   name: 'projectCmp',
@@ -69,9 +69,10 @@ export default {
     width: 275px;
     padding: 15px;
     transition: .2s;
+    transform: scale(.98);
   }
   #projectCmp:hover{
-    transform: scale(1.02);
+    transform: scale(1);
   }
   #container{
     padding: 10px;
@@ -91,12 +92,12 @@ export default {
     box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
   }
   .links{
-    width:35px;
-    height:35px;
+    width:45px;
+    height:45px;
     padding: 10px;
   }
   .nullLink{
-    opacity: .7;
+    opacity: .60;
     transform: scale(.9);
   }
   .activeLink{
