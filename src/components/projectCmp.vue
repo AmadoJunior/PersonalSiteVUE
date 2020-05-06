@@ -88,6 +88,7 @@ export default {
     height: 125px;
     width: 200px;
     margin: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
   }
   .links{
     width:35px;
