@@ -35,7 +35,6 @@ class Project{
     }
     static postProject(formData){
         const token = store.state.token
-        console.log(token)
         return axios.post(url, formData,{headers:{
                 "Content-Type": "multipart/form-data",
                 "authorization": "Bearer " + token

@@ -68,11 +68,10 @@ export default {
     flex-direction: row;
     width: 275px;
     padding: 15px;
-    transition: .2s;
-    transform: scale(.98);
+    transition: .2s linear;
   }
   #projectCmp:hover{
-    transform: scale(1);
+    transform: scale(1.05);
   }
   #container{
     padding: 10px;

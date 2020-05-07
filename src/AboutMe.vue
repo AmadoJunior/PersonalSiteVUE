@@ -39,6 +39,9 @@
 h1{
   margin: 30px;
 }
+ul li{
+  list-style-position: inside;
+}
   #aboutme{
     align-self:center;
     min-width: 400px;

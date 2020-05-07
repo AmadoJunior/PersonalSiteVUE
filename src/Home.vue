@@ -67,6 +67,7 @@ h1{
 }
 
 .button {
+  will-change: transform; 
   display:inline-block;
   transition: .3s;
   backface-visibility: hidden;
@@ -100,7 +101,6 @@ h1{
   flex-direction: column;
   padding:5px;
   justify-content: space-evenly;
-  backface-visibility: hidden;
 }
 .socialItem {
   margin:0;
@@ -108,10 +108,11 @@ h1{
   padding:5px;
   width: 40px;
   height: 40px;
-  transition: .3s ease-in-out;
+  transition: .3s;
 }
 .socialItem:hover{
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 #topContainer{
   display:flex;
