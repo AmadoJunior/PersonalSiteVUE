@@ -3,11 +3,10 @@
     <div class="page">
         <h1>Project Manager</h1>
         <div>
-            <button class="redBtn option" @click="addF()">Add Project</button>
-            <button class="redBtn option" @click="removeF()">Remove Project</button>
+            <button class="redBtn option" :class="{active: addSelected}" @click="addProject()">Add Project</button>
+            <button class="redBtn option" :class="{active: rmSelected}" @click="rmProject()">Remove Project</button>
         </div>
-        <addProjectCmp v-if="add"></addProjectCmp>
-        <removeProjectCmp v-if="remove" />
+        <component :is="selectedCmp" />
     </div>
 
 </template>
@@ -24,18 +23,21 @@ export default {
     },
     data: function(){
         return {
-            add: false,
-            remove: false,
+            selectedCmp: "",
+            addSelected: false,
+            rmSelected: false
         }
     },
     methods:{
-        addF(){
-            this.remove=false;
-            this.add=true;
+        addProject(){
+            this.selectedCmp = addProjectCmp;
+            this.rmSelected = false;
+            this.addSelected = true;
         },
-        removeF(){
-            this.add=false;
-            this.remove=true;
+        rmProject(){
+            this.selectedCmp = removeProjectCmp;
+            this.addSelected = false;
+            this.rmSelected = true;
         }
     }
     
@@ -46,5 +48,9 @@ export default {
 .option{
     margin: 20px 20px 20px 20px;
     width: 200px;
+}
+.active{
+    background-color:#bb2a39;
+    cursor: auto;
 }
 </style>

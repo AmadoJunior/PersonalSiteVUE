@@ -83,6 +83,9 @@ label{
 .redBtn:hover{
     background-color:#bb2a39;
 }
+.redBtn:focus{
+  outline-color:#dc3545;
+}
 .inputField{
     appearance: none;
     background-color: lightgray;
@@ -90,6 +93,9 @@ label{
     border-radius: 3px;
     padding: 10px;
     margin: 5px 20px 5px 20px;
+}
+.inputField:focus {
+  outline-color:#dc3545;
 }
 
 </style>

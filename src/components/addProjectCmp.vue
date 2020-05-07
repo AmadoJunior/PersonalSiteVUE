@@ -30,8 +30,8 @@ export default {
         return{
             title: "",
             description: "",
-            liveLink: "",
-            githubLink: "",
+            liveLink: null,
+            githubLink: null,
             file: ""
         }
     },

@@ -71,7 +71,7 @@ export default {
     transition: .2s linear;
   }
   #projectCmp:hover{
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
   #container{
     padding: 10px;
