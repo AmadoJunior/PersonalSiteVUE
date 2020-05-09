@@ -4,7 +4,7 @@
             <h1>Admin Login</h1>
             <div>
                 <input type="text" placeholder="User" class="inputField" v-model="userName">
-                <input type="text" placeholder="Password" class="inputField" v-model="password">
+                <input type="password" placeholder="Password" class="inputField" v-model="password">
             </div>
             <p v-show="incompleteError">{{incompleteErrorMessage}}</p>
             <p v-show="failedAuthError">{{failedAuthErrorMessage}}</p>
