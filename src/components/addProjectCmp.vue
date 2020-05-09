@@ -22,7 +22,7 @@
     </div>
 </template>
 <script>
-import projectMgrService from "./../tools/projectMgrService.js";
+import Project from "./../tools/projectMgrService.js";
 
 export default {
     name: "addProjectCmp",
@@ -50,7 +50,7 @@ export default {
             formData.append("description", this.description);
             formData.append("file", this.file);
 
-            projectMgrService.postProject(formData);
+            Project.postProject(formData);
 
             this.title = "";
             this.description = "";
