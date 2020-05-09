@@ -35,13 +35,11 @@ class Project{
     }
     static async postProject(formData){
         const token = store.state.token
-        console.log(token);
         const data = await axios.post(url, formData,{headers:{
                 "Content-Type": "multipart/form-data",
                 "authorization": "Bearer " + token
             }
         });
-        console.log(data);
         return data;
     }
     static async deleteProject(title){
