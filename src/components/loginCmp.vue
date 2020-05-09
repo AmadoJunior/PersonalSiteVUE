@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {store} from "./../main";
+import {eventBus} from "./../main";
 
 export default {
     name:"loginCmp",
@@ -31,18 +31,12 @@ export default {
         login(){
             if((this.userName.length && this.password.length) > 0){
                 this.incompleteError = false;
-                store.getToken(this.userName, this.password);
+                eventBus.authenticate(this.userName, this.password);
                 this.userName = "";
                 this.password = "";
             } else {
                 this.incompleteError = true;
-                store.state.error = false;
             }
-        }
-    },
-    computed: {
-        failedAuthError(){
-            return store.state.error;
         }
     }
 }

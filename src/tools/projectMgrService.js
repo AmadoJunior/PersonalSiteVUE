@@ -1,6 +1,6 @@
 //Npm packages
 import axios from "axios";
-import {store} from "./../main.js"
+import {eventBus} from "./../main";
 
 //URL to my api
 const url = "api/projects/";
@@ -34,13 +34,22 @@ class Project{
         })
     }
     static async postProject(formData){
-        const token = store.state.token
-        const data = await axios.post(url, formData,{headers:{
-                "Content-Type": "multipart/form-data",
-                "authorization": "Bearer " + token
-            }
-        });
-        return data;
+        try{
+
+            const response = await axios.post(url, formData,{headers:{
+                    "Content-Type": "multipart/form-data",
+                    "authorization": "Bearer " + localStorage.token
+                }
+            });
+            console.log(response);
+
+        } catch(err){
+
+            eventBus.reset();
+            console.log("Error sending post request" + err);
+            
+        }
+        
     }
     static async deleteProject(title){
         const res = await axios.get(url);

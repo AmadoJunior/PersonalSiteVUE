@@ -36,7 +36,7 @@ export default {
         }
     },
     methods:{
-        addProject(){
+        async addProject(){
             if(this.liveLink.length <= 1){
                 this.liveLink = null;
             }

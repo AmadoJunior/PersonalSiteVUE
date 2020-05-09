@@ -20,38 +20,25 @@ Vue.component("removeProjectCmp", removeProjectCmp);
 //Token class for store
 import Token from "./tools/tokenService";
 
-//Store State Manager
-export var store = {
-  state: {
-    loggedIn: false,
-    token: null,
-    userData: {
-
+export const eventBus = new Vue({
+  methods:{
+    async authenticate(email, password){
+      try{
+        const data = await Token.getToken(email, password);
+        localStorage.token = data.token;
+        localStorage.isLoggedIn = true;
+        this.$emit("addedToken", data.userData);
+      } catch(err){
+        console.log(err)
+      }
     },
-    error: false
-  },
-  async getToken(email, password){
-    try{
-      const data = await Token.getToken(email, password);
-      this.state.error = false;
-      this.state.userData = data.userData;
-      this.state.token = data.token;
-      this.state.loggedIn = true;
-      setTimeout(()=>{
-        this.state.loggedIn = false;
-        this.state.token = null;
-        this.state.userData = null;
-      }, 1800000)
-    }catch(err){
-      this.state.error = true;
-      console.log(err);
+    reset(){
+      localStorage.removeItem("token");
+      localStorage.isLoggedIn = false;
+      this.$emit("removedToken")
     }
-    
-  },
-  getState(){
-    return this.state.loggedIn;
   }
-};
+})
 
 //Set up router middleware
 Vue.use(VueRouter);
