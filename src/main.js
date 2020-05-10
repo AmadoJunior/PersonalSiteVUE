@@ -26,7 +26,6 @@ export const eventBus = new Vue({
       try{
         const data = await Token.getToken(email, password);
         localStorage.token = data.token;
-        localStorage.isLoggedIn = true;
         this.$emit("addedToken", data.userData);
       } catch(err){
         console.log(err)
@@ -34,7 +33,6 @@ export const eventBus = new Vue({
     },
     reset(){
       localStorage.removeItem("token");
-      localStorage.isLoggedIn = false;
       this.$emit("removedToken")
     }
   }

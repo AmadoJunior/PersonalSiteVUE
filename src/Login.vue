@@ -15,7 +15,7 @@ export default {
         loginCmp
     },
     created(){
-        if(localStorage.isLoggedIn === "true"){
+        if(localStorage.token !== undefined){
             this.isLoggedIn = true;
         } else {
             this.isLoggedIn = false;
