@@ -80,12 +80,10 @@ p{
   color:#dc3545;
 }
 #menuCmp {
-  height: 100vh;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
   min-width: 300px;
-  max-width: 300px;
 }
 h1{
   text-align: center;

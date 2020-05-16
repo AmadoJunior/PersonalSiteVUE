@@ -34,11 +34,11 @@ export default {
 </script>
 
 <style>
-
 #app {
   font-family: 'Monda', sans-serif;
   color:#2c3e50;
   display:flex;
+  min-height: 100vh;
 }
 label{
     padding: 10px;
