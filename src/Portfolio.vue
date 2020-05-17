@@ -5,7 +5,8 @@
     </div>
     <div id="projects">
       <projectCmp v-for="project in projects" 
-      :key="project.title"
+      :key="project._id"
+      :_id="project._id"
       :title="project.title" 
       :description="project.description"
       :githubLink="project.githubLink" 
@@ -19,6 +20,7 @@
 <script>
   import projectCmp from "./components/projectCmp.vue"
   import Project from "./tools/projectMgrService";
+  import {eventBus} from "./main";
 
   export default {
   name: 'Portfolio',
@@ -36,6 +38,13 @@
     }catch(err){
       console.log(err);
     }
+    eventBus.$on("projectRemoved", async () => {
+      try{
+        this.projects = await Project.getProject();
+      }catch(err){
+        console.log(err);
+      }
+    })
   },
   methods:{
 

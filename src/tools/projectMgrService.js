@@ -51,15 +51,16 @@ class Project{
         }
         
     }
-    static async deleteProject(title){
-        const res = await axios.get(url);
+    static async deleteProject(_id){
+
         try{
-            for(let object of res.data){
-                if(object.title == title){
-                    axios.delete(url + object._id);
-                }
+
+        await axios.delete(url + _id, {headers:{
+                "authorization": "Bearer " + localStorage.token
             }
-        } catch(err){
+        });
+
+        } catch(err) {
             console.log(err);
         }
         

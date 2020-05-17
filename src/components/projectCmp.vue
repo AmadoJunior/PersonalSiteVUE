@@ -1,5 +1,18 @@
 <template>
   <div id="projectCmp">
+
+    <img src="./../assets/arrow2.png" 
+    id="optionsBtn" 
+    :class="{optionsBtnSelected: isActive}" 
+    @click="toggle()"
+    v-show="userLoggedIn">
+
+    <div id="optionsContainer" 
+    :class="{optionsActive: isActive}">
+
+      <span class="option" @click="remove()">Remove</span>
+
+    </div>
     <div id="container">
       <h4>{{title}}</h4>
       <img :src="file" id="imgIcon">
@@ -15,6 +28,8 @@
 <script>
 import github from '@/assets/github2.png';
 import play from '@/assets/play2.png';
+import Project from "./../tools/projectMgrService";
+import {eventBus} from "./../main";
 
 export default {
   name: 'projectCmp',
@@ -33,8 +48,22 @@ export default {
       this.isActiveLink2 = false;
       this.isNullLink2 = true;
     }
+
+        if(localStorage.token !== undefined){
+      this.userLoggedIn = true;
+    } else {
+      this.userLoggedIn = false;
+    }
+
+    eventBus.$on("tokenAdded", () => {
+      this.userLoggedIn = true;
+    })
+    eventBus.$on("tokenRemoved", () => {
+      this.userLoggedIn = false;
+    })
   },
   props:{
+      _id: String,
       title: String,
       description: String,
       githubLink: String,
@@ -43,19 +72,29 @@ export default {
   },
   data() {
     return {
+      userLoggedIn: false,
       githubIcon: github,
       playIcon: play,
       isNullLink1: false,
       isActiveLink1: true,
       isNullLink2: false,
-      isActiveLink2: true
+      isActiveLink2: true,
+      isActive: false
     }
   },
   methods:{
     goto(url){
-    if(url != null){
-      window.location = url;
-    }
+      if(url != null){
+        window.location = url;
+      }
+    },
+    toggle(){
+      this.isActive = !this.isActive;
+    },
+    remove(){
+      Project.deleteProject(this._id);
+      this.isActive = false;
+      eventBus.$emit("projectRemoved");
     }
   }
 
@@ -64,6 +103,7 @@ export default {
 
 <style scoped>
   #projectCmp{
+    position: relative;
     display:flex;
     flex-direction: row;
     width: 275px;
@@ -111,5 +151,45 @@ export default {
     display:flex;
     flex-direction: column;
     justify-content: center;
+  }
+  #optionsBtn{
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    right: 17px;
+    top: 32px;
+    height: 22px;
+    width: 22px;
+  }
+  #optionsBtn:hover{
+    background-color: lightgray;
+  }
+  .optionsBtnSelected{
+    background-color: lightgray !important;
+  }
+  #optionsContainer{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: white;
+    position: absolute;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
+    border-radius: 5px;
+    right: 18px;
+    top: 54px;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .optionsActive{
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .option{
+    padding: 5px;
+  }
+  .option:hover{
+    background-color: lightgray;
+    border-radius: 5px;
   }
 </style>
