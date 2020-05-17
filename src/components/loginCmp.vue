@@ -7,7 +7,6 @@
                 <input type="password" placeholder="Password" class="inputField" v-model="password">
             </div>
             <p v-show="incompleteError">{{incompleteErrorMessage}}</p>
-            <p v-show="failedAuthError">{{failedAuthErrorMessage}}</p>
             <button class="redBtn" @click="login()">Login</button>
         </div>
     </div>
@@ -23,17 +22,14 @@ export default {
             userName: "",
             password: "",
             incompleteErrorMessage: "Incomplete fields",
-            incompleteError: false,
-            failedAuthErrorMessage: "Failed Authentication",
+            incompleteError: false
         }
     },
     methods: {
         login(){
-            if((this.userName.length && this.password.length) > 0){
+            if((this.userName.length && this.password.length) > 1){
                 this.incompleteError = false;
                 eventBus.authenticate(this.userName, this.password);
-                this.userName = "";
-                this.password = "";
             } else {
                 this.incompleteError = true;
             }
