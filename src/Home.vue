@@ -5,10 +5,15 @@
         <div  id="profile" />
         <div id="social">
           <div class="container">
-            <img class="socialItem" src="./assets/email2.png">
+            <router-link to="/contactme">
+              <img class="socialItem" src="./assets/email2.png">
+            </router-link>
+            
           </div>
           <div class="container">
+            <a href="https://github.com/AmadoJunior" target="_blank">
             <img class="socialItem" src="./assets/github2.png">
+            </a>
           </div>
           <div class="container">
             <img class="socialItem" src="./assets/linkedin2.png">

@@ -22,17 +22,6 @@
         </div>
       </div>
       <div id="footer">
-        <div id="social">
-          <div class="container">
-            <img class="socialItem" src="../assets/email.png">
-          </div>
-          <div class="container">
-            <img class="socialItem" src="../assets/github.png">
-          </div>
-          <div class="container">
-            <img class="socialItem" src="../assets/linkedin.png">
-          </div>
-        </div>
         <div>
         <hr id="foothr">
         <footer>2020 ADM. All rights reserved</footer>
@@ -110,25 +99,6 @@ h1{
 .menu:hover{
   opacity:1;
   transform: scale(1.05);
-}
-#social{
-  display:flex;
-  padding:5px;
-  justify-content: space-evenly;
-
-}
-.container{
-  margin:0;
-  width: 30px;
-  height: 40px;
-}
-.socialItem {
-  margin:0;
-  cursor:pointer;
-  padding:5px;
-  width: 30px;
-  height: 30px;
-  transition: .3s;
 }
 .socialItem:hover{
   transform: scale(1.2);
