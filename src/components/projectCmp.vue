@@ -19,8 +19,12 @@
       <p>{{description}}</p>
     </div>
     <div id="linksContainer">
-      <img :src="githubIcon" class="links" :class="{nullLink: isNullLink1, activeLink: isActiveLink1}" @click="goto(githubLink)">
-      <img :src="playIcon" class="links" :class="{nullLink: isNullLink2, activeLink: isActiveLink2}" @click="goto(liveLink)">
+      <a :href="githubLink" target="_new">
+        <img :src="githubIcon" class="links" :class="{nullLink: isNullLink1, activeLink: isActiveLink1}">
+      </a>
+      <a :href="liveLink" target="_new">
+      <img :src="playIcon" class="links" :class="{nullLink: isNullLink2, activeLink: isActiveLink2}">
+      </a>
     </div>
   </div>
 </template>
@@ -83,11 +87,6 @@ export default {
     }
   },
   methods:{
-    goto(url){
-      if(url != null){
-        window.location = url;
-      }
-    },
     toggle(){
       this.isActive = !this.isActive;
     },
