@@ -6,6 +6,7 @@
       <h3>Full-stack web developer proficient in HTML/CSS as well as JavaScript technologies such as:</h3>
       <ul>
         <li>VueJS</li>
+        <li>ReactJS</li>
         <li>NodeJS</li>
         <li>MongoDB</li>
       </ul>
